@@ -5,7 +5,7 @@ const enhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
 const store = createStore(
   counterReducer,
-  enhancer()
+  enhancer(applyMiddleware(reduxThunk))
 );
 
 export default store;
