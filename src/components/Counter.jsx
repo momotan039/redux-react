@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { Decrement, Increment } from '../redux/actions/counterActions';
 
 function Counter() {
     const {count}=useSelector(state=>state)
     const dispatch=useDispatch()
-    const handelDecrement = () => dispatch({type:'Increment'});
-    const handelIncrement = () => dispatch({type:'Decrement'});
+    const handelDecrement = () => dispatch(Increment);
+    const handelIncrement = () => dispatch(Decrement);
   return (
    <>
         <h1>Count:{count}</h1>
