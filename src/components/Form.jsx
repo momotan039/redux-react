@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../api";
+import { loginUser } from "../redux/userSlice";
 
 function Form() {
     const userReff=useRef()
@@ -8,7 +8,8 @@ function Form() {
     const user=useSelector(state=>state.user)
     const submitLogin=()=>{
         // dispatch(loginUser(userReff))
-        login(userReff,dispatch)
+        // login(userReff,dispatch)
+        dispatch(loginUser(userReff))
     }
   return (
     <div className="login">
